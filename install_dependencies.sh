@@ -13,3 +13,4 @@ sudo apt install -y make
 sudo apt install -y gcc
 sudo apt install -y texinfo
 sudo apt install -y libncurses-dev
+sudo apt install -y fonts-ricty-diminished

@@ -1,8 +1,15 @@
 #!/usr/bin/env bash -e
 
-cd
+cd $(dirname $0)
+if [ -d emacs ]
+then
+    rm -rf emacs
+fi
+
 git clone --single-branch -b emacs-28 --depth 1 https://github.com/emacs-mirror/emacs.git
+
 cd emacs
+
 ./autogen.sh
 
 if [ $(uname | tr '[A-Z]' '[a-z]') == 'darwin' ];

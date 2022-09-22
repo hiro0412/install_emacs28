@@ -1,4 +1,4 @@
-#!/usr/bin/env bash -e
+#!/usr/bin/env bash -ex
 
 cd $(dirname $0)
 if [ -d emacs ]

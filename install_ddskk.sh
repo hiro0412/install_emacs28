@@ -9,3 +9,7 @@ cd ddskk
 
 make get
 make install EMACS=$HOME/.local/bin/emacs
+
+cd nicola
+
+make install EMACS=$HOME/.local/bin/emacs

@@ -14,7 +14,7 @@ cd emacs
 
 if [ $(uname | tr '[A-Z]' '[a-z]') == 'darwin' ];
 then
-    CFGOPTS_DEPEND_OS="--disable-ns-selfcontained"
+    CFGOPTS_DEPEND_OS="--disable-ns-self-contained"
 else
     CFGOPTS_DEPEND_OS="--with-x-toolkit=gtk3"
 fi

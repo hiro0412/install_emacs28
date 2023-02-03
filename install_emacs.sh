@@ -24,6 +24,7 @@ fi
     --with-native-compilation \
     --with-json \
     --with-xft \
+    --with-xwidgets \
     $CFGOPTS_DEPEND_OS \
     CFLAGS="-O3 -mtune=native -march=native -fomit-frame-pointer"
 

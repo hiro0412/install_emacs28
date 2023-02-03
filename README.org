@@ -1,0 +1,40 @@
+#+TITLE: Emacs-28 install script
+#+OPTIONS: ^:{}
+
+This script was created to make the installation of Emacs-28 easy and reproducible.
+
+You can use =install_emacs.sh= to install Emacs-28 under your =~/.local= directory.
+
+Also, if you are using Ubuntu, you can install dependent software packages with =install_dependencies.sh=
+(this must be done before =install_emacs.sh=, and requires sudo privileges).
+
+* install_emacs.sh
+
+- Script to install Emacs28
+- Clone the =emacs-28= branch from [[https://github.com/emacs-mirror/emacs.git][emacs-mirror/emacs]] and follow the normal installation procedure (autogen, configure, make and make install).
+
+- The build is based on the following settings
+  - Prefix: =~/.local=
+  - Enable emacs lisp native compile support (=--with-native-compile=)
+  - Enable native JSON support (=--with-json=)
+  - Use XFT for anti aliased fonts (=--with-xft=)
+  - Enable xwidgets support (=--with-xwidgets=)
+  - (on MacOS) Disable self contained build (=--disable-ns-self-contained=)
+  - (other than MacOS(ex.linux)) Use GTK3 as X Toolkit (=--with-x-toolkit=gtk3=)
+
+** !!!! Caution when using xwidgets !!!!
+
+In my Linux environment (Ubuntu-20.04 on WSL2), =WEBKIT_FORCE_SANDBOX=0= must be
+set as an environment variable or emacs will crash when xwidget is launched.
+Therefore, I use =.bash_aliases= to adjust the environment variable as follows:
+
+#+NAME: .bash_aliases
+#+begin_src bash
+function emacs () {
+    WEBKIT_FORCE_SANDBOX=0 ${HOME}/.local/bin/emacs $*
+}
+#+end_src
+
+* install_dependencies.sh
+
+- TODO: Write description about =install_dependencies.sh=

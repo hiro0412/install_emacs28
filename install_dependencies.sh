@@ -1,4 +1,6 @@
-#!/usr/bin/bash -e
+#!/usr/bin/env bash
+
+set -e
 
 sudo apt update
 sudo apt install -y libgccjit-9-dev
@@ -8,7 +10,7 @@ sudo apt install -y libjson-c-dev
 sudo apt install -y libjansson-dev
 sudo apt install -y libfreetype6-dev
 sudo apt install -y libgtk-3-dev
-sudo apt install -y libwebkit2gtk-4.0
+sudo apt install -y libwebkit2gtk-4.0-37
 sudo apt install -y libwebkit2gtk-4.0-dev
 sudo apt install -y autoconf
 sudo apt install -y make
